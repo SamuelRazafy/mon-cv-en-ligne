@@ -1,0 +1,239 @@
+/* Configuration Générale */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --light-bg: #f4f6f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #d6dbdf;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Layout en Grid */
+.cv-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 1000px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Barre latérale */
+.sidebar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img img {
+    width: 120px;      /* Largeur de la photo */
+    height: 120px;     /* Hauteur de la photo */
+    object-fit: cover; /* Empêche la déformation de l'image */
+    border-radius: 50%;/* Rend la photo parfaitement ronde */
+    border: 3px solid var(--accent-color); /* Ajoute un joli contour bleu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre */
+}
+
+.profile-section h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #bdc3c7;
+    font-style: italic;
+}
+
+.sidebar h3 {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.sidebar p, .sidebar li {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+/* Contenu Principal */
+.main-content {
+    padding: 40px;
+    color: var(--text-color);
+}
+
+main section {
+    margin-bottom: 35px;
+}
+
+main h2 {
+    color: var(--primary-color);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+main hr {
+    border: none;
+    height: 3px;
+    background-color: var(--accent-color);
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+main p {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Style des Jobs & Formations */
+.job, .degree {
+    margin-bottom: 20px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-header h3 {
+    font-size: 16px;
+    color: var(--secondary-color);
+}
+
+.date {
+    font-size: 12px;
+    background-color: var(--light-bg);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.company, .school {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+main ul {
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Bouton & JavaScript classes */
+.btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+    margin-top: 10px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .cv-container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        text-align: center;
+    }
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .date {
+        margin-top: 5px;
+    }
+}
+/* Sélecteur de langue */
+.lang-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lang-btn {
+    border: none;
+    background: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--secondary-color);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.lang-btn:hover:not(.active) {
+    background-color: rgba(52, 152, 219, 0.2);
+}
