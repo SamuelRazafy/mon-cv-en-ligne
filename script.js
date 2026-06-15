@@ -64,10 +64,10 @@ const translations = {
         "edu1-details": "Web and mobile programming (React, Angular, Node.js), Relational databases (MySQL, PostgreSQL).",
         "edu2-title": "Master's Degree in Mining Engineering",
         "title-skills": "Core Skills",
-        "skill-lang": "Languages:",
-        "skill-frame": "Frameworks:",
-        "skill-db": "Databases:",
-        "skill-tools": "Tools:",
+        "skill-lang": "Languages :",
+        "skill-frame": "Frameworks :",
+        "skill-db": "Databases :",
+        "skill-tools": "Tools :",
         "skill-env": "Environments:"
     }
 };
@@ -132,5 +132,63 @@ document.addEventListener('DOMContentLoaded', () => {
         translatePage('en');
         this.classList.add('active');
         document.getElementById('btn-fr').classList.remove('active');
+    });
+
+    // 6. Gestion du téléchargement PDF avec message de confirmation (Version Optimisée)
+    document.getElementById('btn-pdf').addEventListener('click', () => {
+        
+        const confirmMessages = {
+            fr: "Souhaitez-vous télécharger ce CV au format PDF ?",
+            en: "Do you want to download this CV as a PDF file?"
+        };
+
+        const userConfirmed = confirm(confirmMessages[currentLang]); // Utilise la langue courante[cite: 3]
+
+        if (!userConfirmed) {
+            return; 
+        }
+
+        const element = document.querySelector('.cv-container');
+        const moreText = document.getElementById('more-profile-text');
+        const toggleBtn = document.getElementById('toggle-profile-btn');
+        const wasHidden = moreText.classList.contains('hidden'); // Vérifie l'état initial[cite: 3]
+
+        // 1. On affiche le texte caché pour que le PDF soit complet
+        if (wasHidden) {
+            moreText.classList.remove('hidden');
+            moreText.classList.add('visible');
+        }
+
+        // 2. Configuration optimisée avec exclusion des éléments
+     // Configuration ajustée pour supprimer le décalage gauche
+        const opt = {
+            margin:       0, 
+            filename:     'CV_Samuel_RAZAFINTSALAMA.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { 
+                scale: 2, 
+                useCORS: true,
+                logging: false,
+                width: 1000,
+                windowWidth: 1000,
+                // Ces deux paramètres forcent html2canvas à démarrer la capture au pixel 0
+                x: 0,
+                scrollX: 0,
+                ignoreElements: function (el) {
+                    return el.id === 'toggle-profile-btn' || el.classList.contains('lang-switcher');
+                }
+            },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // 3. Lancement de la génération
+        html2pdf().set(opt).from(element).save().then(() => {
+            // Remise en état initial de l'affichage sur l'écran web
+            if (wasHidden) {
+                moreText.classList.remove('visible');
+                moreText.classList.add('hidden');
+                toggleBtn.textContent = translations[currentLang]['btn-more']; // Reprend le texte initial[cite: 3]
+            }
+        });
     });
 });

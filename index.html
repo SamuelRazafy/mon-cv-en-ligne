@@ -8,11 +8,15 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
 
     <div class="lang-switcher">
+        <button id="btn-pdf" class="lang-btn" title="Télécharger en PDF">
+            <i class="fa-solid fa-file-pdf"></i> PDF
+        </button>
         <button id="btn-fr" class="lang-btn active">FR</button>
         <button id="btn-en" class="lang-btn">EN</button>
     </div>
@@ -24,112 +28,95 @@
                     <img src="photo-samuel.png" alt="Photo de Samuël RAZAFINTSALAMA">
                 </div>
                 <h1>Samuël RAZAFINTSALAMA</h1>
-                <p class="subtitle" data-translate="subtitle">Consultant Technico-Fonctionnel SAP</p>
+                <p class="subtitle" data-translate="subtitle"></p>
             </div>
 
             <section class="contact-info">
-                <h3><i class="fa-solid fa-address-book"></i> <span data-translate="title-contact">Contact</span></h3>
+                <h3><i class="fa-solid fa-address-book"></i> <span data-translate="title-contact"></span></h3>
                 <p><i class="fa-solid fa-phone"></i> +261 34 99 948 99</p>
                 <p><i class="fa-solid fa-envelope"></i> salamaikoto@gmail.com</p>
                 <p><i class="fa-solid fa-location-dot"></i> Antananarivo, Madagascar</p>
             </section>
 
             <section class="skills">
-                <h3><i class="fa-solid fa-gear"></i> <span data-translate="title-skills">Compétences</span></h3>
+                <h3><i class="fa-solid fa-gear"></i> <span data-translate="title-skills"></span></h3>
                 <ul>
-                    <li><strong data-translate="skill-lang">Langages :</strong> ABAP, Java, JavaScript, SQL</li>
-                    <li><strong data-translate="skill-frame">Frameworks :</strong> SAPUI5, SAP NetWeaver, SAP BTP</li>
-                    <li><strong data-translate="skill-db">Bases de données :</strong> HANA, MySQL, PostgreSQL</li>
-                    <li><strong data-translate="skill-tools">Outils :</strong> Fiori, OData, Git, Postman, Power BI</li>
-                    <li><strong data-translate="skill-env">Environnements :</strong> SAP ECC, SAP S/4HANA, VS Code,
+                    <li><strong data-translate="skill-lang"></strong> ABAP, Java, JavaScript, SQL</li>
+                    <li><strong data-translate="skill-frame"></strong> SAPUI5, SAP NetWeaver, SAP BTP</li>
+                    <li><strong data-translate="skill-db"></strong> HANA, MySQL, PostgreSQL</li>
+                    <li><strong data-translate="skill-tools"></strong> Fiori, OData, Git, Postman, Power BI</li>
+                    <li><strong data-translate="skill-env"></strong> SAP ECC, SAP S/4HANA, VS Code,
                         Eclipse</li>
                 </ul>
             </section>
 
             <section class="languages">
-                <h3><i class="fa-solid fa-language"></i> <span data-translate="title-languages">Langues</span></h3>
+                <h3><i class="fa-solid fa-language"></i> <span data-translate="title-languages"></span></h3>
                 <ul>
-                    <li data-translate="lang-fr">Français (Courant)</li>
-                    <li data-translate="lang-en">Anglais (Technique / Documentation)</li>
-                    <li data-translate="lang-mg">Malagasy (Maternelle)</li>
+                    <li data-translate="lang-fr"></li>
+                    <li data-translate="lang-en"></li>
+                    <li data-translate="lang-mg"></li>
                 </ul>
             </section>
         </aside>
 
         <main class="main-content">
             <section class="profile-summary">
-                <h2><i class="fa-solid fa-user"></i> <span data-translate="title-profile">Profil Professionnel</span>
+                <h2><i class="fa-solid fa-user"></i> <span data-translate="title-profile"></span>
                 </h2>
                 <hr>
-                <p id="profile-text-1" data-translate="profile-desc-1">
-                    Ingénieur de formation avec une reconversion réussie vers le développement d'applications
-                    numériques,
-                    je cumule deux ans d'expérience en tant que consultant technico-fonctionnel SAP chez SAPERP Solution
-                    Madagascar.
-                    Mon expertise couvre le développement technico-fonctionnel SAP, notamment sur le back-end SAP,
-                    OData, Fiori et SAPUI5.
-                </p>
-                <button id="toggle-profile-btn" class="btn" data-translate="btn-more">En savoir plus</button>
-                <p id="more-profile-text" class="hidden" data-translate="profile-desc-2">
-                    Curieux, rigoureux et polyvalent, je suis à l'aise dans des environnements SAP complexes et modernes
-                    (SAP BTP, SAP NetWeaver)
-                    et maîtrise plusieurs langages et frameworks.
-                </p>
+                <p id="profile-text-1" data-translate="profile-desc-1"></p>
+                <button id="toggle-profile-btn" class="btn" data-translate="btn-more"></button>
+                <p id="more-profile-text" class="hidden" data-translate="profile-desc-2"></p>
             </section>
 
             <section class="experience">
-                <h2><i class="fa-solid fa-briefcase"></i> <span data-translate="title-experience">Expériences
-                        Professionnelles</span></h2>
+                <h2><i class="fa-solid fa-briefcase"></i> <span data-translate="title-experience"></span></h2>
                 <hr>
                 <div class="job">
                     <div class="job-header">
-                        <h3 data-translate="job1-title">Consultant Technico-Fonctionnel SAP</h3>
-                        <span class="date" data-translate="job1-date">2023 - Aujourd'hui</span>
+                        <h3 data-translate="job1-title"></h3>
+                        <span class="date" data-translate="job1-date"></span>
                     </div>
                     <p class="company">SAPERP Solution MADAGASCAR</p>
                     <ul>
-                        <li data-translate="job1-task1">Développement et maintenance d'applications SAP en ABAP
-                            (Enhancement, BAPI, IDoc, SAP Workflow).</li>
-                        <li data-translate="job1-task2">Création de services OData pour les applications Fiori.</li>
-                        <li data-translate="job1-task3">Intégration de solutions SAPUI5 dans SAP NetWeaver et SAP BTP.
-                        </li>
-                        <li data-translate="job1-task4">Collaboration avec les équipes fonctionnelles pour la rédaction
-                            des spécifications techniques.</li>
+                        <li data-translate="job1-task1"></li>
+                        <li data-translate="job1-task2"></li>
+                        <li data-translate="job1-task3"></li>
+                        <li data-translate="job1-task4"></li>
                     </ul>
                 </div>
 
                 <div class="job">
                     <div class="job-header">
-                        <h3 data-translate="job2-title">Responsable / Animateur - Centre de Loisir</h3>
+                        <h3 data-translate="job2-title"></h3>
                         <span class="date">Déc. 2012 - Nov. 2020</span>
                     </div>
                     <p class="company">Société Mazoto Ambohidrapeto, Antananarivo</p>
                     <ul>
-                        <li data-translate="job2-task1">Encadrement des activités éducatives et sportives.</li>
-                        <li data-translate="job2-task2">Gestion d'équipe et animation de projets socioculturels.</li>
-                        <li data-translate="job2-task3">Développement de compétences transverses : organisation,
-                            communication, esprit d'équipe.</li>
+                        <li data-translate="job2-task1"></li>
+                        <li data-translate="job2-task2"></li>
+                        <li data-translate="job2-task3"></li>
                     </ul>
                 </div>
             </section>
 
             <section class="education">
-                <h2><i class="fa-solid fa-graduation-cap"></i> <span data-translate="title-education">Formation</span>
+                <h2><i class="fa-solid fa-graduation-cap"></i> <span data-translate="title-education"></span>
                 </h2>
                 <hr>
                 <div class="degree">
                     <div class="job-header">
-                        <h3 data-translate="edu1-title">Concepteur Développeur d'Applications Numériques</h3>
+                        <h3 data-translate="edu1-title"></h3>
                         <span class="date">2022</span>
                     </div>
                     <p class="school">Inclusiv Academy, Faravohitra Antananarivo</p>
-                    <p class="details" data-translate="edu1-details">Programmation web et mobile (React, Angular,
-                        Node.js), Bases de données (MySQL, PostgreSQL).</p>
+                    <p class="details" data-translate="edu1-details"></p>
                 </div>
 
                 <div class="degree">
                     <div class="job-header">
-                        <h3 data-translate="edu2-title">Diplôme d'Ingénieur des Mines</h3>
+                        <h3 data-translate="edu2-title"></h3>
                         <span class="date">2003 - 2008</span>
                     </div>
                     <p class="school">École Supérieure Polytechnique d'Antananarivo</p>

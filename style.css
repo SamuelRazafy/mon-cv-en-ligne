@@ -237,3 +237,114 @@ main ul {
 .lang-btn:hover:not(.active) {
     background-color: rgba(52, 152, 219, 0.2);
 }
+
+/* Styles spécifiques pour l'export PDF et ajustements */
+#btn-pdf {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#btn-pdf:hover {
+    background-color: #c0392b;
+}
+
+/* Règle d'impression pour masquer les éléments inutiles sur le PDF */
+@media print {
+    .lang-switcher {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   AJUSTEMENTS FINAUX POUR L'IMPRESSION DE LA PAGE A4
+   ========================================================================== */
+@media print {
+    /* Masquage de sécurité */
+    .lang-switcher, #toggle-profile-btn {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    /* Ajustement du conteneur global pour éviter le rognage */
+   /* Ajustement strict du conteneur global pour l'impression */
+    .cv-container {
+        display: grid !important;
+        grid-template-columns: 1fr 2fr !important;
+        width: 1000px !important;
+        height: 1400px !important;
+        max-width: 1000px !important;
+        
+        /* Neutralisation des styles qui provoquent des décalages de pixels */
+        margin: 0 !important; 
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        transform: none !important;
+    }
+
+    /* Sécurité pour la barre latérale (évite le texte coupé à gauche) */
+    .sidebar {
+        padding: 25px 20px 25px 25px !important; /* Augmentation du padding gauche */
+    }
+    
+    .profile-section {
+        margin-bottom: 15px !important;
+    }
+    
+    .profile-img img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .sidebar h3 {
+        margin-top: 15px !important;
+        margin-bottom: 8px !important;
+        font-size: 14px !important;
+    }
+    
+    .sidebar p, .sidebar li {
+        font-size: 12px !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* Ajustements du contenu principal droit */
+    .main-content {
+        padding: 30px 35px !important;
+    }
+    
+    main section {
+        margin-bottom: 20px !important;
+    }
+    
+    main h2 {
+        font-size: 18px !important;
+    }
+    
+    main hr {
+        margin-bottom: 10px !important;
+    }
+    
+    main p {
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+    }
+
+    .job, .degree {
+        margin-bottom: 14px !important;
+    }
+    
+    .job-header h3 {
+        font-size: 14px !important;
+    }
+    
+    .company, .school {
+        font-size: 13px !important;
+        margin-bottom: 4px !important;
+    }
+    
+    main ul {
+        font-size: 12px !important;
+        line-height: 1.45 !important;
+    }
+}
