@@ -33,21 +33,34 @@
 
             <section class="contact-info">
                 <h3><i class="fa-solid fa-address-book"></i> <span data-translate="title-contact"></span></h3>
-                <p><i class="fa-solid fa-phone"></i> +261 34 99 948 99</p>
-                <p><i class="fa-solid fa-envelope"></i> salamaikoto@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot"></i> Antananarivo, Madagascar</p>
+                <a href="tel:+261349994899" class="contact-link"><i class="fa-solid fa-phone"></i> +261 34 99 948 99</a>
+                <a href="mailto:salamaikoto@gmail.com" class="contact-link"><i class="fa-solid fa-envelope"></i> salamaikoto@gmail.com</a>
+                <p class="contact-link"><i class="fa-solid fa-location-dot"></i> Antananarivo, Madagascar</p>
             </section>
 
             <section class="skills">
                 <h3><i class="fa-solid fa-gear"></i> <span data-translate="title-skills"></span></h3>
-                <ul>
-                    <li><strong data-translate="skill-lang"></strong> ABAP, Java, JavaScript, SQL</li>
-                    <li><strong data-translate="skill-frame"></strong> SAPUI5, SAP NetWeaver, SAP BTP</li>
-                    <li><strong data-translate="skill-db"></strong> HANA, MySQL, PostgreSQL</li>
-                    <li><strong data-translate="skill-tools"></strong> Fiori, OData, Git, Postman, Power BI</li>
-                    <li><strong data-translate="skill-env"></strong> SAP ECC, SAP S/4HANA, VS Code,
-                        Eclipse</li>
-                </ul>
+                
+                <div class="skill-category">
+                    <span class="skill-title" data-translate="skill-lang"></span>
+                    <div class="tags"><span class="tag">ABAP</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-title" data-translate="skill-frame"></span>
+                    <div class="tags"><span class="tag">SAPUI5</span><span class="tag">SAP NetWeaver</span><span class="tag">SAP BTP</span></div>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-title" data-translate="skill-db"></span>
+                    <div class="tags"><span class="tag">HANA</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span></div>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-title" data-translate="skill-tools"></span>
+                    <div class="tags"><span class="tag">Fiori</span><span class="tag">OData</span><span class="tag">Git</span><span class="tag">Postman</span><span class="tag">Power BI</span></div>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-title" data-translate="skill-env"></span>
+                    <div class="tags"><span class="tag">SAP ECC</span><span class="tag">SAP S/4HANA</span><span class="tag">VS Code</span><span class="tag">Eclipse</span></div>
+                </div>
             </section>
 
             <section class="languages">
@@ -62,64 +75,72 @@
 
         <main class="main-content">
             <section class="profile-summary">
-                <h2><i class="fa-solid fa-user"></i> <span data-translate="title-profile"></span>
-                </h2>
+                <h2><i class="fa-solid fa-user"></i> <span data-translate="title-profile"></span></h2>
                 <hr>
                 <p id="profile-text-1" data-translate="profile-desc-1"></p>
                 <button id="toggle-profile-btn" class="btn" data-translate="btn-more"></button>
                 <p id="more-profile-text" class="hidden" data-translate="profile-desc-2"></p>
             </section>
 
-            <section class="experience">
+            <section class="experience timeline-section">
                 <h2><i class="fa-solid fa-briefcase"></i> <span data-translate="title-experience"></span></h2>
                 <hr>
-                <div class="job">
-                    <div class="job-header">
-                        <h3 data-translate="job1-title"></h3>
-                        <span class="date" data-translate="job1-date"></span>
+                
+                <div class="timeline-item">
+                    <div class="job">
+                        <div class="job-header">
+                            <h3 data-translate="job1-title"></h3>
+                            <span class="date" data-translate="job1-date"></span>
+                        </div>
+                        <p class="company">SAPERP Solution MADAGASCAR</p>
+                        <ul>
+                            <li data-translate="job1-task1"></li>
+                            <li data-translate="job1-task2"></li>
+                            <li data-translate="job1-task3"></li>
+                            <li data-translate="job1-task4"></li>
+                        </ul>
                     </div>
-                    <p class="company">SAPERP Solution MADAGASCAR</p>
-                    <ul>
-                        <li data-translate="job1-task1"></li>
-                        <li data-translate="job1-task2"></li>
-                        <li data-translate="job1-task3"></li>
-                        <li data-translate="job1-task4"></li>
-                    </ul>
                 </div>
 
-                <div class="job">
-                    <div class="job-header">
-                        <h3 data-translate="job2-title"></h3>
-                        <span class="date">Déc. 2012 - Nov. 2020</span>
+                <div class="timeline-item">
+                    <div class="job">
+                        <div class="job-header">
+                            <h3 data-translate="job2-title"></h3>
+                            <span class="date">Déc. 2012 - Nov. 2020</span>
+                        </div>
+                        <p class="company">Société Mazoto Ambohidrapeto, Antananarivo</p>
+                        <ul>
+                            <li data-translate="job2-task1"></li>
+                            <li data-translate="job2-task2"></li>
+                            <li data-translate="job2-task3"></li>
+                        </ul>
                     </div>
-                    <p class="company">Société Mazoto Ambohidrapeto, Antananarivo</p>
-                    <ul>
-                        <li data-translate="job2-task1"></li>
-                        <li data-translate="job2-task2"></li>
-                        <li data-translate="job2-task3"></li>
-                    </ul>
                 </div>
             </section>
 
-            <section class="education">
-                <h2><i class="fa-solid fa-graduation-cap"></i> <span data-translate="title-education"></span>
-                </h2>
+            <section class="education timeline-section">
+                <h2><i class="fa-solid fa-graduation-cap"></i> <span data-translate="title-education"></span></h2>
                 <hr>
-                <div class="degree">
-                    <div class="job-header">
-                        <h3 data-translate="edu1-title"></h3>
-                        <span class="date">2022</span>
+                
+                <div class="timeline-item">
+                    <div class="degree">
+                        <div class="job-header">
+                            <h3 data-translate="edu1-title"></h3>
+                            <span class="date">2022</span>
+                        </div>
+                        <p class="school">Inclusiv Academy, Faravohitra Antananarivo</p>
+                        <p class="details" data-translate="edu1-details"></p>
                     </div>
-                    <p class="school">Inclusiv Academy, Faravohitra Antananarivo</p>
-                    <p class="details" data-translate="edu1-details"></p>
                 </div>
 
-                <div class="degree">
-                    <div class="job-header">
-                        <h3 data-translate="edu2-title"></h3>
-                        <span class="date">2003 - 2008</span>
+                <div class="timeline-item">
+                    <div class="degree">
+                        <div class="job-header">
+                            <h3 data-translate="edu2-title"></h3>
+                            <span class="date">2003 - 2008</span>
+                        </div>
+                        <p class="school">École Supérieure Polytechnique d'Antananarivo</p>
                     </div>
-                    <p class="school">École Supérieure Polytechnique d'Antananarivo</p>
                 </div>
             </section>
         </main>
@@ -127,5 +148,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>

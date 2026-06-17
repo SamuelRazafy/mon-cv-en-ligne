@@ -1,24 +1,26 @@
 /* Configuration Générale */
 :root {
-    --primary-color: #2c3e50;
+    --primary-color: #1a252f;      /* Bleu nuit plus profond et statutaire */
     --secondary-color: #34495e;
-    --accent-color: #3498db;
-    --text-color: #333;
-    --light-bg: #f4f6f7;
+    --accent-color: #007cc0;       /* Bleu d'accentuation moderne inspiré de l'écosystème SAP */
+    --text-color: #2c3e50;
+    --light-bg: #f8f9fa;
+    --tag-bg: rgba(255, 255, 255, 0.15);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Inter, system-ui, sans-serif;
 }
 
 body {
-    background-color: #d6dbdf;
+    background-color: #eef2f5;
     display: flex;
     justify-content: center;
     padding: 40px 20px;
+    color: var(--text-color);
 }
 
 /* Layout en Grid */
@@ -26,9 +28,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     max-width: 1000px;
+    width: 100%;
     background-color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 12px;
     overflow: hidden;
 }
 
@@ -36,173 +39,234 @@ body {
 .sidebar {
     background-color: var(--primary-color);
     color: white;
-    padding: 30px;
+    padding: 35px 30px;
 }
 
 .profile-section {
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.profile-img {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 35px;
 }
 
 .profile-img img {
-    width: 120px;      /* Largeur de la photo */
-    height: 120px;     /* Hauteur de la photo */
-    object-fit: cover; /* Empêche la déformation de l'image */
-    border-radius: 50%;/* Rend la photo parfaitement ronde */
-    border: 3px solid var(--accent-color); /* Ajoute un joli contour bleu */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre */
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
 }
 
 .profile-section h1 {
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
 }
 
 .subtitle {
-    font-size: 14px;
-    color: #bdc3c7;
-    font-style: italic;
+    font-size: 13px;
+    color: #cbd5e1;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .sidebar h3 {
     border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 5px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    font-size: 16px;
+    padding-bottom: 6px;
+    margin-top: 30px;
+    margin-bottom: 18px;
+    font-size: 14px;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #f1f5f9;
 }
 
-.sidebar p, .sidebar li {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 10px;
+/* Liens contacts interactifs */
+.contact-link {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13.5px;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+}
+a.contact-link:hover {
+    color: var(--accent-color);
+}
+.sidebar i {
+    width: 20px;
+    color: var(--accent-color);
+}
+
+/* Design des compétences sous forme de Badges (Tags) */
+.skill-category {
+    margin-bottom: 12px;
+}
+.skill-title {
+    font-size: 12px;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 4px;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.tag {
+    background: var(--tag-bg);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #f8fafc;
 }
 
 .sidebar ul {
     list-style: none;
 }
+.sidebar li {
+    font-size: 13.5px;
+    margin-bottom: 8px;
+    color: #e2e8f0;
+}
 
 /* Contenu Principal */
 .main-content {
-    padding: 40px;
-    color: var(--text-color);
+    padding: 45px;
 }
 
 main section {
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 main h2 {
     color: var(--primary-color);
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+main h2 i {
+    color: var(--accent-color);
+    font-size: 18px;
 }
 
 main hr {
     border: none;
     height: 3px;
     background-color: var(--accent-color);
-    width: 50px;
-    margin-bottom: 15px;
+    width: 35px;
+    margin-top: 6px;
+    margin-bottom: 20px;
 }
 
 main p {
     line-height: 1.6;
-    font-size: 15px;
+    font-size: 14.5px;
+    color: #475569;
 }
 
-/* Style des Jobs & Formations */
-.job, .degree {
+/* Effet Timeline pour l'expérience et l'éducation */
+.timeline-section {
+    position: relative;
+}
+.timeline-item {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid #e2e8f0;
     margin-bottom: 20px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-color);
+}
+
+.job, .degree {
+    margin-bottom: 0;
 }
 
 .job-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 4px;
 }
 
 .job-header h3 {
     font-size: 16px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 .date {
-    font-size: 12px;
-    background-color: var(--light-bg);
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-weight: bold;
+    font-size: 11px;
+    background-color: #e2e8f0;
+    color: var(--secondary-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .company, .school {
     font-weight: 600;
     color: var(--accent-color);
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 13.5px;
+    margin-bottom: 10px;
 }
 
 main ul {
-    margin-left: 20px;
-    font-size: 14px;
-    line-height: 1.6;
+    margin-left: 18px;
+    font-size: 13.5px;
+    color: #475569;
+}
+main li {
+    margin-bottom: 6px;
+    line-height: 1.5;
 }
 
-/* Bouton & JavaScript classes */
+/* Boutons et éléments Interactifs */
 .btn {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    margin-top: 10px;
+    background: none;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 6px 14px;
+    margin-top: 12px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 12px;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 .btn:hover {
-    background-color: #2980b9;
+    background-color: var(--accent-color);
+    color: white;
 }
 
-.hidden {
-    display: none;
-}
-
+.hidden { display: none; }
 .visible {
     display: block;
     margin-top: 10px;
-    animation: fadeIn 0.5s ease-in;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive pour mobile */
-@media (max-width: 768px) {
-    .cv-container {
-        grid-template-columns: 1fr;
-    }
-    .sidebar {
-        text-align: center;
-    }
-    .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .date {
-        margin-top: 5px;
-    }
-}
 /* Sélecteur de langue */
 .lang-switcher {
     position: fixed;
@@ -210,23 +274,24 @@ main ul {
     right: 20px;
     z-index: 1000;
     display: flex;
-    gap: 5px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 5px;
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(8px);
+    padding: 6px;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .lang-btn {
     border: none;
     background: none;
-    padding: 6px 12px;
+    padding: 8px 14px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 12px;
+    font-weight: 700;
+    font-size: 11px;
     color: var(--secondary-color);
-    border-radius: 15px;
-    transition: 0.3s;
+    border-radius: 20px;
+    transition: all 0.2s;
 }
 
 .lang-btn.active {
@@ -235,116 +300,61 @@ main ul {
 }
 
 .lang-btn:hover:not(.active) {
-    background-color: rgba(52, 152, 219, 0.2);
+    background-color: rgba(0, 124, 192, 0.1);
 }
 
-/* Styles spécifiques pour l'export PDF et ajustements */
 #btn-pdf {
     background-color: #e74c3c;
     color: white;
 }
-
 #btn-pdf:hover {
     background-color: #c0392b;
 }
 
-/* Règle d'impression pour masquer les éléments inutiles sur le PDF */
-@media print {
-    .lang-switcher {
-        display: none !important;
-    }
+/* Responsive SmartPhone */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    .cv-container { grid-template-columns: 1fr; }
+    .sidebar { text-align: center; }
+    .tags { justify-content: center; }
+    .job-header { flex-direction: column; gap: 6px; }
+    .main-content { padding: 30px 20px; }
+    .timeline-item { padding-left: 15px; }
 }
 
 /* ==========================================================================
-   AJUSTEMENTS FINAUX POUR L'IMPRESSION DE LA PAGE A4
+   AJUSTEMENTS STRICTS POUR L'IMPRESSION PDF A4 (CONSERVÉS)
    ========================================================================== */
 @media print {
-    /* Masquage de sécurité */
     .lang-switcher, #toggle-profile-btn {
         display: none !important;
         opacity: 0 !important;
         visibility: hidden !important;
     }
-
-    /* Ajustement du conteneur global pour éviter le rognage */
-   /* Ajustement strict du conteneur global pour l'impression */
     .cv-container {
         display: grid !important;
         grid-template-columns: 1fr 2fr !important;
         width: 1000px !important;
         height: 1400px !important;
         max-width: 1000px !important;
-        
-        /* Neutralisation des styles qui provoquent des décalages de pixels */
         margin: 0 !important; 
         padding: 0 !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         transform: none !important;
     }
-
-    /* Sécurité pour la barre latérale (évite le texte coupé à gauche) */
-    .sidebar {
-        padding: 25px 20px 25px 25px !important; /* Augmentation du padding gauche */
-    }
-    
-    .profile-section {
-        margin-bottom: 15px !important;
-    }
-    
-    .profile-img img {
-        width: 100px !important;
-        height: 100px !important;
-    }
-    
-    .sidebar h3 {
-        margin-top: 15px !important;
-        margin-bottom: 8px !important;
-        font-size: 14px !important;
-    }
-    
-    .sidebar p, .sidebar li {
-        font-size: 12px !important;
-        margin-bottom: 6px !important;
-    }
-
-    /* Ajustements du contenu principal droit */
-    .main-content {
-        padding: 30px 35px !important;
-    }
-    
-    main section {
-        margin-bottom: 20px !important;
-    }
-    
-    main h2 {
-        font-size: 18px !important;
-    }
-    
-    main hr {
-        margin-bottom: 10px !important;
-    }
-    
-    main p {
-        font-size: 13px !important;
-        line-height: 1.45 !important;
-    }
-
-    .job, .degree {
-        margin-bottom: 14px !important;
-    }
-    
-    .job-header h3 {
-        font-size: 14px !important;
-    }
-    
-    .company, .school {
-        font-size: 13px !important;
-        margin-bottom: 4px !important;
-    }
-    
-    main ul {
-        font-size: 12px !important;
-        line-height: 1.45 !important;
-    }
+    .sidebar { padding: 25px 20px 25px 25px !important; --tag-bg: rgba(0,0,0,0.08); }
+    .tag { color: var(--primary-color) !important; background: #e2e8f0 !important; border: 1px solid #cbd5e1; }
+    .profile-section { margin-bottom: 15px !important; }
+    .profile-img img { width: 100px !important; height: 100px !important; }
+    .sidebar h3 { margin-top: 15px !important; margin-bottom: 8px !important; font-size: 14px !important; }
+    .sidebar p, .sidebar li, .contact-link { font-size: 12px !important; margin-bottom: 6px !important; color: #cbd5e1 !important;}
+    .main-content { padding: 30px 35px !important; }
+    main section { margin-bottom: 20px !important; }
+    main h2 { font-size: 18px !important; }
+    main hr { margin-bottom: 10px !important; }
+    main p, main ul { font-size: 13px !important; line-height: 1.45 !important; }
+    .job, .degree { margin-bottom: 14px !important; }
+    .job-header h3 { font-size: 14px !important; }
+    .company, .school { font-size: 13px !important; margin-bottom: 4px !important; }
 }
